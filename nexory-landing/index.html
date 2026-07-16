@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Nexory — Agentes de IA para atención al cliente 24/7</title>
-<meta name="description" content="Construimos agentes de inteligencia artificial que responden, califican y agendan por ti. Diagnóstico gratuito sin compromiso.">
+<title>Nexory — Consultoría de IA para negocios operativos</title>
+<meta name="description" content="Diagnosticamos tu operación y diseñamos sistemas de IA que tu equipo realmente usa. Diagnóstico inicial sin compromiso.">
 <meta name="theme-color" content="#06070d">
 <link rel="icon" href="assets/nexory-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -483,6 +483,32 @@ h2.sec-title{
   margin-top:3px;
 }
 
+/* Fit check — ¿Es para ti? */
+.fit{display:grid;gap:18px;grid-template-columns:1fr;}
+@media(min-width:880px){.fit{grid-template-columns:repeat(2, 1fr)}}
+.fit-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:30px 28px;
+}
+.fit-card h3{font-size:17px;margin-bottom:16px}
+.fit-card ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.fit-card li{display:flex;gap:9px;color:var(--text-dim);font-size:14.5px;line-height:1.5}
+.fit-card li::before{
+  content:"";flex-shrink:0;width:16px;height:16px;border-radius:50%;
+  background-size:9px;background-position:center;background-repeat:no-repeat;
+  margin-top:2px;
+}
+.fit-card.yes h3{color:var(--success)}
+.fit-card.yes li::before{
+  background-color:rgba(52,211,153,.12);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2334d399' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+}
+.fit-card.no h3{color:#f87171}
+.fit-card.no li::before{
+  background-color:rgba(248,113,113,.12);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f87171' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'/><line x1='6' y1='6' x2='18' y2='18'/></svg>");
+}
+
 /* CTA / Lead */
 .cta-card{
   margin-top:0;
@@ -694,7 +720,7 @@ body[data-fab="on"] .fab{display:inline-flex}
 
   <div class="container hero-grid">
     <div class="hero-text">
-      <span class="eyebrow"><span class="pulse"></span>Agencia de Inteligencia Artificial</span>
+      <span class="eyebrow"><span class="pulse"></span>Consultoría de IA para negocios operativos</span>
       <h1>Tu negocio<br>responde solo.<br><span class="grad">Sin contratar a nadie.</span></h1>
       <p class="lede">Diseñamos agentes de IA que atienden, califican y agendan por ti — en WhatsApp, web y donde estén tus clientes. 24/7, sin pausas, sin sueldos extra.</p>
 
@@ -836,12 +862,12 @@ body[data-fab="on"] .fab{display:inline-flex}
       <div class="step reveal">
         <div class="step-n">03</div>
         <h3>Implementación</h3>
-        <p>Construimos e integramos con las herramientas que ya usas. Tú no aprendes a programar; nosotros entregamos.</p>
+        <p>Construimos e integramos con las herramientas que ya usas, y capacitamos a tu equipo para que lo opere de verdad. El entregable no es solo el sistema — es tu equipo usándolo.</p>
       </div>
       <div class="step reveal">
         <div class="step-n">04</div>
         <h3>Operación</h3>
-        <p>El sistema trabaja 24/7. Lo monitoreamos, lo ajustamos y lo escalamos contigo a medida que creces.</p>
+        <p>El sistema trabaja 24/7. Lo monitoreamos, ajustamos y escalamos contigo mes a mes — como partner continuo, no como proveedor que entrega y desaparece.</p>
       </div>
     </div>
   </div>
@@ -971,25 +997,17 @@ body[data-fab="on"] .fab{display:inline-flex}
   <div class="container">
     <div class="cta-card reveal">
       <div>
-        <span class="kicker" style="margin-bottom:18px">Recurso gratuito</span>
-        <h2>Guía: 5 procesos que puedes automatizar esta semana.</h2>
-        <p>Sin tecnicismos. Te explicamos cuáles atacar primero, qué herramientas usar y cómo estimar el tiempo que recuperas — antes de gastar un peso.</p>
+        <span class="kicker" style="margin-bottom:18px">Diagnóstico rápido</span>
+        <h2>¿Tu negocio está listo para IA?</h2>
+        <p>Un checklist de 2 minutos, 7 señales. No lo determina tu presupuesto ni la tecnología que tengas — lo determina si tu operación ya tiene sistema.</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;color:var(--text-dim);font-size:14px">
-          <li style="display:flex;gap:9px"><span style="color:var(--success);font-weight:700">✓</span>Los 5 procesos con mayor retorno</li>
-          <li style="display:flex;gap:9px"><span style="color:var(--success);font-weight:700">✓</span>Herramientas según tu presupuesto</li>
-          <li style="display:flex;gap:9px"><span style="color:var(--success);font-weight:700">✓</span>Cómo priorizar por volumen</li>
-          <li style="display:flex;gap:9px"><span style="color:var(--success);font-weight:700">✓</span>Errores frecuentes (y cómo evitarlos)</li>
+          <li style="display:flex;gap:9px"><span style="color:var(--success);font-weight:700">✓</span>Resultado inmediato, sin dejar tu correo</li>
+          <li style="display:flex;gap:9px"><span style="color:var(--success);font-weight:700">✓</span>7 preguntas concretas sobre tu operación</li>
+          <li style="display:flex;gap:9px"><span style="color:var(--success);font-weight:700">✓</span>Te dice si ya estás listo o qué falta primero</li>
         </ul>
       </div>
-      <div>
-        <form class="cta-form" id="lead-form">
-          <input type="text" placeholder="Tu nombre" required autocomplete="name">
-          <input type="email" placeholder="Tu correo electrónico" required autocomplete="email">
-          <input type="text" placeholder="Nombre de tu negocio" autocomplete="organization">
-          <button type="submit" class="btn btn-primary btn-lg">Quiero la guía →</button>
-          <div class="cta-form-note">Sin spam. Solo la guía y contenido útil.</div>
-        </form>
-        <div id="lead-ok">✓ Listo. Revisa tu correo en los próximos minutos.</div>
+      <div style="display:flex;align-items:center;justify-content:center">
+        <a class="btn btn-primary btn-lg" href="listo-para-ia.html" target="_blank" rel="noopener">Hacer el checklist →</a>
       </div>
     </div>
   </div>
@@ -1018,7 +1036,7 @@ body[data-fab="on"] .fab{display:inline-flex}
       </details>
       <details class="faq-item reveal">
         <summary>¿Cuánto cuesta?<span class="arr"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
-        <div class="body">Depende del alcance. No damos precios genéricos porque lo que necesita una clínica con 50 pacientes diarios no es lo mismo que un e-commerce con 10. El diagnóstico es gratuito, justo para entender tu caso y darte un precio exacto.</div>
+        <div class="body">Depende del alcance. No damos precios genéricos porque lo que necesita una clínica con 50 pacientes diarios no es lo mismo que un e-commerce con 10. Ofrecemos 1 diagnóstico gratuito al mes; los siguientes tienen costo según el alcance. La implementación se cotiza por proyecto, y el acompañamiento posterior es un retainer mensual — así seguimos ajustando el sistema contigo, no solo lo entregamos y desaparecemos.</div>
       </details>
       <details class="faq-item reveal">
         <summary>¿Se integra con las herramientas que ya uso?<span class="arr"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
@@ -1032,18 +1050,48 @@ body[data-fab="on"] .fab{display:inline-flex}
   </div>
 </section>
 
+<!-- ────── ¿ES PARA TI? ────── -->
+<section id="es-para-ti">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">¿Es para ti?</span>
+      <h2 class="sec-title">Antes de agendar,<br>revisa si calificas.</h2>
+    </div>
+
+    <div class="fit">
+      <div class="fit-card yes reveal">
+        <h3>✓ Es para ti si</h3>
+        <ul>
+          <li>Tu equipo repite las mismas conversaciones de WhatsApp todos los días — agendar, confirmar, reprogramar.</li>
+          <li>Pierdes clientes por no responder a tiempo fuera de horario.</li>
+          <li>Estás listo para implementar en los próximos 60-90 días, no solo explorando.</li>
+          <li>Tienes un proceso operativo con volumen — no un negocio que recién arranca.</li>
+        </ul>
+      </div>
+      <div class="fit-card no reveal">
+        <h3>✗ No es para ti si</h3>
+        <ul>
+          <li>Buscas "probar la IA" sin intención real de implementar pronto.</li>
+          <li>Tu volumen de conversaciones es tan bajo que automatizar no cambia nada todavía — te lo decimos gratis en el diagnóstico, sin compromiso.</li>
+          <li>Esperas una solución genérica de plantilla sin ajuste a tu operación.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ────── FINAL CTA ────── -->
 <section class="final">
   <div class="glow cyan"></div>
   <div class="container">
     <h2 class="reveal">¿Cuántos clientes está perdiendo<br>tu negocio mientras lees esto?</h2>
-    <p class="reveal">30 minutos de diagnóstico gratuito. Sin compromiso. Te decimos qué se puede automatizar y qué impacto esperar — con números, no con humo.</p>
+    <p class="reveal">1 diagnóstico gratuito al mes. 30 minutos, sin compromiso. Te decimos qué se puede automatizar y qué impacto esperar — con números, no con humo.</p>
     <div class="hero-ctas reveal">
       <a class="btn btn-wa btn-lg" href="https://wa.me/50768275349?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener">
         <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Z"/></svg>
         Agendar diagnóstico gratis
       </a>
-      <a class="btn btn-ghost btn-lg" href="assets/nexory_guia_1.pdf" download="Guia-Nexory-5-Procesos.pdf">Descargar guía</a>
+      <a class="btn btn-ghost btn-lg" href="listo-para-ia.html" target="_blank" rel="noopener">Hacer el checklist</a>
     </div>
   </div>
 </section>
@@ -1060,8 +1108,9 @@ body[data-fab="on"] .fab{display:inline-flex}
       <a href="#proceso">Proceso</a>
       <a href="#industrias">Industrias</a>
       <a href="mailto:info@nexorysystems.com">info@nexorysystems.com</a>
+      <a href="https://www.linkedin.com/in/joseth-serrano-a813071ab/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-copy">© 2026 Nexory · Automatización con IA</div>
+    <div class="foot-copy">© 2026 Nexory · Consultoría de IA con adopción real</div>
   </div>
 </footer>
 
@@ -1080,25 +1129,6 @@ body[data-fab="on"] .fab{display:inline-flex}
     es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:.08});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  // ── Lead form
-  const f = document.getElementById('lead-form');
-  if(f){
-    f.addEventListener('submit', e=>{
-      e.preventDefault();
-      // Trigger PDF download
-      const a = document.createElement('a');
-      a.href = 'assets/nexory_guia_1.pdf';
-      a.download = 'Guia-Nexory-5-Procesos.pdf';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      // Show success message
-      f.style.display='none';
-      document.getElementById('lead-ok').style.display='block';
-      // TODO: webhook → Make / n8n
-    });
-  }
 
   // ── WhatsApp chat animation (hero)
   (function chatLoop(){

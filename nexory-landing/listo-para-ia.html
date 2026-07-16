@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Tu negocio está listo para IA? — Nexory</title>
+<meta property="og:title" content="¿Tu negocio está listo para IA? — Nexory">
+<meta property="og:description" content="Checklist de 7 señales para saber si tu operación ya tiene el sistema necesario antes de automatizar.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<!-- Analítica sin cookies vía Plausible. Si no tienes cuenta en Plausible, este script no hace nada (no rompe la página). -->
+<script defer data-domain="nexorysystems.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:          #06070d;
+  --bg-2:        #0a0c14;
+  --card:        #0f1220;
+  --card-2:      #131628;
+  --border:      rgba(140, 160, 220, 0.10);
+  --border-strong: rgba(140, 160, 220, 0.20);
+  --text:        #eaecf3;
+  --text-dim:    #b4bbcc;
+  --muted:       #6e7689;
+  --cyan:        #22d3ee;
+  --violet:      #a855f7;
+  --success:     #34d399;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 28px 44px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 620px 380px at 10% 0%, rgba(34,211,238,0.14), transparent 65%),
+              radial-gradient(ellipse 500px 340px at 100% 30%, rgba(168,85,247,0.12), transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 584px; margin: 0 auto; }
+
+.wordmark {
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: -0.01em;
+  margin-bottom: 38px;
+}
+.wordmark .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  box-shadow: 0 0 12px rgba(34,211,238,0.5);
+}
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px 6px 10px; border-radius: 999px;
+  background: rgba(34,211,238,.08);
+  border: 1px solid rgba(34,211,238,.22);
+  color: var(--cyan);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.eyebrow .pulse {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--cyan);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 6vw, 46px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+h1 .grad {
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin-bottom: 28px;
+}
+.subtitle strong { color: var(--text); font-weight: 600; }
+
+.author {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-dim);
+}
+.author .avatar {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.author span { color: var(--text); font-weight: 700; }
+
+/* BODY */
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 44px 28px 72px;
+}
+
+/* PROGRESS */
+.progress-block {
+  margin-bottom: 8px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+}
+.progress-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-dim); white-space: nowrap;
+}
+.progress-track {
+  flex: 1; height: 3px; background: var(--card-2); border-radius: 3px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+  transition: width .35s ease;
+  box-shadow: 0 0 8px rgba(34,211,238,0.5);
+}
+.progress-count {
+  font-family: var(--font-mono);
+  font-size: 13px; color: var(--cyan); font-weight: 700; min-width: 34px; text-align: right;
+}
+
+/* CHECKLIST CARD */
+.checklist-card {
+  margin-top: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 8px 22px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.04) inset, 0 24px 60px -24px rgba(0,0,0,.6);
+}
+
+.item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 19px 2px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.item:last-child { border-bottom: none; }
+
+.check-box {
+  flex-shrink: 0;
+  width: 23px; height: 23px;
+  border: 1.5px solid var(--muted);
+  border-radius: 6px;
+  margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+  background: var(--bg);
+}
+.check-box svg {
+  width: 13px; height: 13px;
+  opacity: 0;
+  transition: opacity .15s;
+}
+.item.checked .check-box {
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  border-color: transparent;
+  box-shadow: 0 0 10px rgba(34,211,238,0.4);
+}
+.item.checked .check-box svg { opacity: 1; }
+
+.item-num {
+  font-family: var(--font-mono);
+  font-size: 11.5px; color: var(--violet); font-weight: 700;
+  margin-right: 2px;
+}
+
+.item-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  transition: color .2s;
+  padding-top: 1px;
+}
+.item.checked .item-text { color: var(--text); }
+
+/* RESULT */
+.result {
+  margin-top: 28px;
+  padding: 26px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition: border-color .3s, background .3s;
+  position: relative;
+  overflow: hidden;
+}
+.result::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--border);
+  transition: background .3s;
+}
+.result.ready::before {
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+}
+.result.ready {
+  border-color: rgba(34,211,238,0.3);
+  background: linear-gradient(160deg, rgba(34,211,238,0.07), rgba(168,85,247,0.05));
+}
+
+.result-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 10px; font-weight: 700;
+}
+.result.ready .result-label { color: var(--cyan); }
+
+.result-title {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  color: var(--text); margin-bottom: 10px; line-height: 1.25;
+}
+
+.result-body {
+  font-size: 14px; color: var(--text-dim); line-height: 1.65;
+}
+
+/* CTA */
+.cta {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.cta-kicker {
+  font-family: var(--font-mono);
+  font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--cyan); font-weight: 700; margin-bottom: 14px;
+}
+.cta-text {
+  font-size: 15px; color: var(--text-dim); margin-bottom: 26px; max-width: 48ch;
+}
+.cta-text strong { color: var(--text); }
+
+.cta-button {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  color: #08111c;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform .15s, box-shadow .2s;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 10px 30px -12px rgba(34,211,238,.45);
+}
+.cta-button:hover { box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset, 0 14px 40px -14px rgba(168,85,247,.5); transform: translateY(-1px); }
+.cta-button svg { width: 16px; height: 16px; }
+
+.footer-note {
+  margin-top: 52px;
+  font-size: 12.5px; color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+
+    <div class="wordmark"><span class="dot"></span>NEXORY</div>
+
+    <div class="eyebrow"><span class="pulse"></span>Diagnóstico rápido</div>
+
+    <h1>¿Tu negocio está<br>listo para <span class="grad">IA</span>?</h1>
+
+    <p class="subtitle">
+      No lo determina el presupuesto ni la tecnología que tengas.
+      Lo determina algo mucho más simple: <strong>si tu operación ya tiene sistema.</strong>
+    </p>
+
+    <div class="author">
+      <div class="avatar"><img src="data:image/jpeg;base64,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" alt="Joseth" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      Por <span>Joseth</span> — Founder, Nexory
+    </div>
+
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="progress-block">
+    <span class="progress-label">Marcadas</span>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <span class="progress-count" id="count">0/7</span>
+  </div>
+
+  <div class="checklist-card">
+    <div class="checklist" id="checklist">
+
+      <div class="item" data-i="1">
+        <div class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#06070d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="item-text"><span class="item-num">01</span> Puedo nombrar la tarea que más se repite en mi semana, sin pensarlo mucho.</div>
+      </div>
+
+      <div class="item" data-i="2">
+        <div class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#06070d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="item-text"><span class="item-num">02</span> Puedo explicarle ese proceso a alguien nuevo, paso a paso, sin saltarme partes.</div>
+      </div>
+
+      <div class="item" data-i="3">
+        <div class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#06070d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="item-text"><span class="item-num">03</span> Mi equipo hace esa tarea igual, sin que yo esté encima corrigiendo.</div>
+      </div>
+
+      <div class="item" data-i="4">
+        <div class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#06070d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="item-text"><span class="item-num">04</span> Sé exactamente dónde se pierde el tiempo — no solo lo siento, lo puedo señalar.</div>
+      </div>
+
+      <div class="item" data-i="5">
+        <div class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#06070d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="item-text"><span class="item-num">05</span> Ya intenté delegar algo y funcionó, aunque haya sido solo una vez.</div>
+      </div>
+
+      <div class="item" data-i="6">
+        <div class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#06070d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="item-text"><span class="item-num">06</span> Tengo un cuello de botella identificado — un punto específico, no "todo está desordenado".</div>
+      </div>
+
+      <div class="item" data-i="7">
+        <div class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#06070d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="item-text"><span class="item-num">07</span> Estoy dispuesto a documentar antes de automatizar, no solo a comprar una herramienta.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="result" id="result">
+    <div class="result-label" id="result-label">Resultado</div>
+    <div class="result-title" id="result-title">Marca las señales que apliquen a tu negocio.</div>
+    <div class="result-body" id="result-body">El resultado se actualiza automáticamente a medida que marcas.</div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-kicker">Siguiente paso</div>
+    <p class="cta-text">
+      Este checklist es una versión mini de lo que hacemos completo en
+      <strong>Nexory 360°</strong>: la auditoría real de tu operación, con roadmap de implementación incluido.
+    </p>
+    <a href="https://wa.me/50768275349?text=Hola%2C%20quiero%20agendar%20mi%20Nexory%20360%C2%B0" class="cta-button" onclick="if(window.plausible){plausible('Clic Nexory 360')}">
+      Solicita tu Nexory 360°
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+
+  <div class="footer-note">
+    Conecto lo humano con lo artificial. — Nexory
+  </div>
+
+</div>
+
+<script>
+const items = document.querySelectorAll('.item');
+const fill = document.getElementById('fill');
+const count = document.getElementById('count');
+const result = document.getElementById('result');
+const resultLabel = document.getElementById('result-label');
+const resultTitle = document.getElementById('result-title');
+const resultBody = document.getElementById('result-body');
+
+const messages = {
+  low: {
+    label: 'Resultado',
+    title: 'Todavía no es momento de IA. Es momento de sistema.',
+    body: 'Y está bien — es exactamente ahí donde empieza Nexory 360°: la auditoría de tu operación antes de automatizar nada.'
+  },
+  ready: {
+    label: 'Resultado',
+    title: 'Tu negocio está listo para implementar IA.',
+    body: 'El problema ya no es técnico — es de ejecución. Ahí es donde entramos con la implementación real.'
+  }
+};
+
+function update() {
+  const checked = document.querySelectorAll('.item.checked').length;
+  count.textContent = checked + '/7';
+  fill.style.width = (checked / 7 * 100) + '%';
+
+  if (checked === 0) {
+    result.classList.remove('ready');
+    resultLabel.textContent = 'Resultado';
+    resultTitle.textContent = 'Marca las señales que apliquen a tu negocio.';
+    resultBody.textContent = 'El resultado se actualiza automáticamente a medida que marcas.';
+    return;
+  }
+
+  const state = checked >= 5 ? messages.ready : messages.low;
+  result.classList.toggle('ready', checked >= 5);
+  resultLabel.textContent = state.label + ' — ' + checked + ' de 7';
+  resultTitle.textContent = state.title;
+  resultBody.textContent = state.body;
+}
+
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('checked');
+    update();
+  });
+});
+</script>
+
+</body>
+</html>
