@@ -83,6 +83,20 @@ button{font:inherit;cursor:pointer}
 .glow.cyan{background:radial-gradient(circle, rgba(34,211,238,.22), transparent 70%)}
 .glow.purple{background:radial-gradient(circle, rgba(168,85,247,.22), transparent 70%)}
 
+/* ──────────────  AMBIENT BACKGROUND (particle net + grid)  ────────────── */
+.bg-particles{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.85;pointer-events:none}
+.bg-grid{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 20%, transparent 75%);
+  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 20%, transparent 75%);
+}
+.page{position:relative;z-index:1}
+
+/* Decorative corner bracket used on hero-art cards */
+.corner{position:absolute;top:14px;left:14px;width:16px;height:16px;border-top:1px solid rgba(34,211,238,.55);border-left:1px solid rgba(34,211,238,.55);pointer-events:none;z-index:2}
+
 /* ──────────────  NAV  ────────────── */
 .nav{
   position:sticky;top:0;z-index:50;
@@ -238,6 +252,12 @@ body[data-hero="aurora"] .terminal-card{display:none}
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-12px)}
 }
+.aurora-ring{
+  position:absolute;top:50%;left:50%;width:260px;height:260px;margin:-130px 0 0 -130px;
+  border-radius:50%;border:1px dashed rgba(34,211,238,.3);
+  animation:spinRing 18s linear infinite;z-index:1;
+}
+@keyframes spinRing{to{transform:rotate(360deg)}}
 
 /* ──── HERO VARIANT: chat (WhatsApp mockup) ──── */
 .chat-card{
@@ -282,7 +302,7 @@ body[data-hero="chat"] .chat-card{display:block}
 
 /* ──── HERO VARIANT: terminal ──── */
 .terminal-card{
-  position:relative;background:var(--card);
+  position:relative;overflow:hidden;background:var(--card);
   border:1px solid var(--border);border-radius:var(--radius-lg);
   padding:18px 20px;box-shadow:var(--shadow-card);
   font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;
@@ -290,6 +310,12 @@ body[data-hero="chat"] .chat-card{display:block}
   max-width:480px;margin:0 auto;min-height:340px;
 }
 body[data-hero="terminal"] .terminal-card{display:block}
+.scan-line{
+  position:absolute;left:0;right:0;height:60px;pointer-events:none;
+  background:linear-gradient(180deg, transparent, rgba(34,211,238,.08), transparent);
+  animation:scanSweep 5s linear infinite;
+}
+@keyframes scanSweep{0%{transform:translateY(-100%)}100%{transform:translateY(420%)}}
 .term-head{display:flex;align-items:center;gap:6px;margin-bottom:14px}
 .term-head .d{width:11px;height:11px;border-radius:50%;background:#3a3f55}
 .term-head .d.r{background:#ff5f56}
@@ -301,6 +327,8 @@ body[data-hero="terminal"] .terminal-card{display:block}
 .term-line .k{color:var(--accent-2)}
 .term-line .v{color:var(--success)}
 .term-line .c{color:var(--muted)}
+.term-cursor{color:var(--accent-1);margin-left:4px;animation:cursorBlink 1s step-start infinite}
+@keyframes cursorBlink{0%,100%{opacity:1}50%{opacity:0}}
 
 /* ──────────────  CAPABILITIES STRIP  ────────────── */
 .cap-strip{
@@ -691,6 +719,11 @@ body[data-fab="on"] .fab{display:inline-flex}
 </head>
 <body data-palette="cian-purpura" data-hero="chat" data-fab="on">
 
+<canvas class="bg-particles" id="bg-particles"></canvas>
+<div class="bg-grid"></div>
+
+<div class="page">
+
 <!-- ────── NAV ────── -->
 <header class="nav">
   <div class="container nav-row">
@@ -742,11 +775,14 @@ body[data-fab="on"] .fab{display:inline-flex}
     <div class="hero-art">
       <!-- Aurora variant -->
       <div class="aurora">
+        <div class="corner"></div>
         <div class="aurora-logo"><img src="assets/nexory-mark.png" alt=""></div>
+        <div class="aurora-ring"></div>
       </div>
 
       <!-- Chat variant (default) -->
       <div class="chat-card">
+        <div class="corner"></div>
         <div class="chat-head">
           <div class="chat-avatar">N</div>
           <div class="chat-who">Asistente Nexory<small>en línea · responde al instante</small></div>
@@ -756,6 +792,8 @@ body[data-fab="on"] .fab{display:inline-flex}
 
       <!-- Terminal variant -->
       <div class="terminal-card">
+        <div class="corner"></div>
+        <div class="scan-line"></div>
         <div class="term-head">
           <span class="d r"></span><span class="d y"></span><span class="d g"></span>
           <span class="t">nexory · agent runtime</span>
@@ -767,7 +805,7 @@ body[data-fab="on"] .fab{display:inline-flex}
         <div class="term-line"><span class="p">→</span> action: <span class="k">qualify</span> → <span class="k">schedule</span></div>
         <div class="term-line"><span class="p">→</span> calendar: <span class="v">slot disponible · jue 15:00</span></div>
         <div class="term-line"><span class="p">→</span> notify_team: <span class="v">true</span></div>
-        <div class="term-line"><span class="p">→</span> status: <span class="v">✓ resolved in 1.4s</span></div>
+        <div class="term-line"><span class="p">→</span> status: <span class="v">✓ resolved in 1.4s</span><span class="term-cursor">▍</span></div>
       </div>
     </div>
   </div>
@@ -1120,10 +1158,77 @@ body[data-fab="on"] .fab{display:inline-flex}
   Chatear
 </a>
 
+</div><!-- /.page -->
+
 <!-- Tweaks mount -->
 <div id="tweaks-root"></div>
 
 <script>
+  // ── Ambient particle network (hero background)
+  (function particles(){
+    const canvas = document.getElementById('bg-particles');
+    if(!canvas || !canvas.getContext) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, nodes, raf;
+
+    function accentRgb(){
+      const hex = getComputedStyle(document.body).getPropertyValue('--accent-1').trim() || '#22d3ee';
+      const m = hex.replace('#','').match(/.{1,2}/g) || ['22','d3','ee'];
+      return m.map(x=>parseInt(x,16));
+    }
+    function rgba(rgb, a){ return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + a + ')'; }
+
+    function size(){
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth; h = window.innerHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function init(){
+      size();
+      const N = 46;
+      nodes = Array.from({length:N}, () => ({
+        x: Math.random()*w, y: Math.random()*h,
+        vx: (Math.random()-.5)*0.25, vy: (Math.random()-.5)*0.25
+      }));
+    }
+    function draw(){
+      const rgb = accentRgb();
+      ctx.clearRect(0,0,w,h);
+      for(const n of nodes){
+        n.x += n.vx; n.y += n.vy;
+        if(n.x < 0 || n.x > w) n.vx *= -1;
+        if(n.y < 0 || n.y > h) n.vy *= -1;
+      }
+      for(let i=0;i<nodes.length;i++){
+        for(let j=i+1;j<nodes.length;j++){
+          const dx = nodes[i].x-nodes[j].x, dy = nodes[i].y-nodes[j].y;
+          const d = Math.sqrt(dx*dx+dy*dy);
+          if(d < 150){
+            ctx.strokeStyle = rgba(rgb, (1 - d/150) * 0.14);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      for(const n of nodes){
+        ctx.fillStyle = rgba(rgb, 0.55);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 1.6, 0, Math.PI*2);
+        ctx.fill();
+      }
+      raf = requestAnimationFrame(draw);
+    }
+    try{
+      init();
+      draw();
+      window.addEventListener('resize', size);
+    }catch(err){}
+  })();
+
   // ── Reveal on scroll
   try{
     const io = new IntersectionObserver(es=>{
