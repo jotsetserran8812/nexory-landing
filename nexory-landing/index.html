@@ -846,7 +846,7 @@ section{padding:var(--section-y) 0;position:relative}
   ];
 
   var MAX = 11;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Con "reducir movimiento" la conversación se reproduce igual: el CSS solo quita los deslizamientos
 
   function esc(s){ return String(s).replace(/[&<>]/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[ch]; }); }
 
@@ -866,11 +866,6 @@ section{padding:var(--section-y) 0;position:relative}
       chat.appendChild(b);
     }
     while(chat.children.length > MAX) chat.removeChild(chat.firstChild);
-  }
-
-  if(reduce){
-    script.forEach(function(it){ if(it.c !== 'typing') apply(it); });
-    return;
   }
 
   var i = 0;
