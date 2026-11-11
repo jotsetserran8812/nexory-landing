@@ -77,10 +77,11 @@ button{font:inherit;cursor:pointer}
   border-bottom:1px solid var(--line);
 }
 .nav-row{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-.brand-mark{width:28px;height:28px}
-.brand-mark img{width:100%;height:100%;object-fit:contain}
-.brand-name{font-weight:700;font-size:18px;letter-spacing:-0.02em}
+.brand{display:inline-flex;align-items:baseline;gap:1.5px;text-decoration:none;color:var(--text)}
+/* La N del logo hace de primera letra: se recorta el margen transparente del PNG */
+.brand-mark{position:relative;width:15px;height:17.5px;overflow:hidden;flex-shrink:0}
+.brand-mark img{position:absolute;width:42px;height:42px;max-width:none;left:-13.6px;top:-11.5px}
+.brand-name{font-weight:700;font-size:21px;letter-spacing:-0.02em;line-height:1}
 .nav-links{display:none;gap:4px}
 .nav-links a{
   font-family:var(--mono);font-size:13px;color:var(--text-dim);text-decoration:none;
@@ -554,7 +555,7 @@ section{padding:var(--section-y) 0;position:relative}
   <div class="container nav-row">
     <a class="brand" href="#top" aria-label="Nexory, inicio">
       <span class="brand-mark"><img src="assets/nexory-mark.png" alt=""></span>
-      <span class="brand-name">Nexory</span>
+      <span class="brand-name">exory</span>
     </a>
     <nav class="nav-links" aria-label="Principal">
       <a href="#proceso"><span>#</span>proceso</a>
@@ -926,7 +927,7 @@ section{padding:var(--section-y) 0;position:relative}
   <div class="container foot-row">
     <a class="brand" href="#top" aria-label="Nexory, inicio">
       <span class="brand-mark"><img src="assets/nexory-mark.png" alt=""></span>
-      <span class="brand-name">Nexory</span>
+      <span class="brand-name">exory</span>
     </a>
     <div class="foot-links">
       <a href="#servicios">Servicios</a>
