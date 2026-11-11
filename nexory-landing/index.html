@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Nexory — Consultoría de IA para negocios operativos</title>
 <meta name="description" content="Diagnosticamos tu operación y diseñamos sistemas de IA que tu equipo realmente usa. Diagnóstico inicial sin compromiso.">
-<meta name="theme-color" content="#050616">
+<meta name="theme-color" content="#020617">
 <link rel="icon" href="assets/nexory-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <style>
 :root{
   /* Paleta Nexory (sin cambios) */
-  --bg: #050616;
+  --bg: #020617;
   --bg-2: #080a1f;
   --card: #0f1220;
   --card-2: #131628;
@@ -22,7 +22,7 @@
   --line-strong: rgba(140,160,220,.24);
   --text: #eaecf3;
   --text-dim: #b4bbcc;
-  --muted: #6e7689;
+  --muted: #8b95b0;
   --cyan: #22d3ee;
   --violet: #a855f7;
   --mid: #6f8df5;
@@ -42,7 +42,8 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  background:radial-gradient(1200px 700px at 70% -10%, #0b0c2a 0%, transparent 60%), var(--bg);color:var(--text);
+  /* Degradado de página: marino casi negro arriba, azul rey abajo (referencia del cliente) */
+  background:linear-gradient(180deg, #020617 0%, #030a26 22%, #04123f 45%, #05206a 66%, #063594 84%, #0750bd 100%) #020617;color:var(--text);
   font-family:var(--sans);font-size:16px;line-height:1.6;
   overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
@@ -218,7 +219,7 @@ button{font:inherit;cursor:pointer}
 @media(max-width:640px){.chat{height:400px}.bubble{font-size:12.5px}}
 
 /* ─────────── FRANJA DE ESPECIFICACIONES ─────────── */
-.specs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(8,10,31,.6)}
+.specs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(2,6,23,.35)}
 .specs-grid{display:grid;grid-template-columns:repeat(2,1fr)}
 @media(min-width:760px){.specs-grid{grid-template-columns:repeat(4,1fr)}}
 .spec{padding:26px clamp(16px,2.4vw,32px);border-right:1px solid var(--line)}
@@ -233,7 +234,7 @@ button{font:inherit;cursor:pointer}
 
 /* ─────────── SECCIONES ─────────── */
 section{padding:var(--section-y) 0;position:relative}
-.alt{background:rgba(8,10,31,.6);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.alt{background:rgba(2,6,23,.28);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sec-head{
   display:grid;gap:18px;grid-template-columns:1fr;align-items:end;
   margin-bottom:clamp(36px,5vw,56px);
@@ -399,16 +400,16 @@ section{padding:var(--section-y) 0;position:relative}
 /* CTA final */
 .final{text-align:center;overflow:hidden}
 .final::before{
-  content:"";position:absolute;left:50%;top:10%;width:760px;height:420px;transform:translateX(-50%);pointer-events:none;
-  background:radial-gradient(closest-side, rgba(34,211,238,.14), transparent),radial-gradient(closest-side at 70% 60%, rgba(168,85,247,.12), transparent);
+  content:"";position:absolute;left:0;right:0;bottom:0;height:70%;pointer-events:none;
+  background:linear-gradient(180deg, transparent 0%, rgba(14,140,230,.28) 55%, rgba(34,211,238,.42) 100%);
 }
 .final .container{position:relative}
 .final h2{font-size:clamp(32px,5vw,64px);max-width:16ch;margin:0 auto 20px}
-.final p{color:var(--text-dim);max-width:54ch;margin:0 auto 32px;line-height:1.6}
+.final p{color:var(--text);max-width:54ch;margin:0 auto 32px;line-height:1.6}
 .final .hero-ctas{justify-content:center}
 
 /* Footer */
-.foot{border-top:1px solid var(--line);padding:32px 0;background:var(--bg)}
+.foot{border-top:1px solid rgba(34,211,238,.45);padding:32px 0;background:rgba(2,6,23,.72);box-shadow:0 -1px 40px rgba(34,211,238,.35)}
 .foot-row{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between}
 .foot-links{display:flex;flex-wrap:wrap;gap:6px 20px}
 .foot-links a{color:var(--text-dim);text-decoration:none;font-size:13.5px}
@@ -463,7 +464,7 @@ section{padding:var(--section-y) 0;position:relative}
 .node,.alt .node{
   background:linear-gradient(145deg, #0f2230, #1c1436);
   border-color:rgba(168,85,247,.45);color:#e6e9ff;
-  box-shadow:0 0 0 5px #07091d, 0 0 26px -4px rgba(168,85,247,.7);
+  box-shadow:0 0 26px -4px rgba(168,85,247,.7);
 }
 
 /* Checklist: panel grande con arco de luz */
