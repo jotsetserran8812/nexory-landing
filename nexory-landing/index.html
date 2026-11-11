@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Nexory — Consultoría de IA para negocios operativos</title>
 <meta name="description" content="Diagnosticamos tu operación y diseñamos sistemas de IA que tu equipo realmente usa. Diagnóstico inicial sin compromiso.">
-<meta name="theme-color" content="#070920">
+<meta name="theme-color" content="#050616">
 <link rel="icon" href="assets/nexory-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +14,8 @@
 <style>
 :root{
   /* Paleta Nexory (sin cambios) */
-  --bg: #070920;
-  --bg-2: #0b0d2a;
+  --bg: #050616;
+  --bg-2: #080a1f;
   --card: #0f1220;
   --card-2: #131628;
   --line: rgba(140,160,220,.12);
@@ -42,7 +42,7 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  background:radial-gradient(1200px 700px at 70% -10%, #11123c 0%, transparent 60%), var(--bg);color:var(--text);
+  background:radial-gradient(1200px 700px at 70% -10%, #0b0c2a 0%, transparent 60%), var(--bg);color:var(--text);
   font-family:var(--sans);font-size:16px;line-height:1.6;
   overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
@@ -72,7 +72,7 @@ button{font:inherit;cursor:pointer}
 /* ─────────── NAV ─────────── */
 .nav{
   position:sticky;top:0;z-index:50;
-  background:rgba(7,9,32,.78);
+  background:rgba(5,6,22,.8);
   backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);
   border-bottom:1px solid var(--line);
 }
@@ -145,7 +145,7 @@ button{font:inherit;cursor:pointer}
 .phone{
   position:relative;width:min(320px, 86vw);
   border:9px solid #161a28;border-radius:44px;overflow:hidden;
-  background:#0a0c24;
+  background:#07091b;
   box-shadow:0 0 0 1px var(--line-strong), 0 50px 100px -30px rgba(0,0,0,.95), 0 0 80px -24px rgba(34,211,238,.3);
 }
 .notch{
@@ -198,7 +198,7 @@ button{font:inherit;cursor:pointer}
 @media(max-width:640px){.chat{height:400px}.bubble{font-size:12.5px}}
 
 /* ─────────── FRANJA DE ESPECIFICACIONES ─────────── */
-.specs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(11,13,42,.6)}
+.specs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(8,10,31,.6)}
 .specs-grid{display:grid;grid-template-columns:repeat(2,1fr)}
 @media(min-width:760px){.specs-grid{grid-template-columns:repeat(4,1fr)}}
 .spec{padding:26px clamp(16px,2.4vw,32px);border-right:1px solid var(--line)}
@@ -213,7 +213,7 @@ button{font:inherit;cursor:pointer}
 
 /* ─────────── SECCIONES ─────────── */
 section{padding:var(--section-y) 0;position:relative}
-.alt{background:rgba(11,13,42,.6);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.alt{background:rgba(8,10,31,.6);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sec-head{
   display:grid;gap:18px;grid-template-columns:1fr;align-items:end;
   margin-bottom:clamp(36px,5vw,56px);
@@ -230,7 +230,7 @@ section{padding:var(--section-y) 0;position:relative}
   background:var(--line);gap:1px;
 }
 .cell{background:var(--bg);padding:clamp(20px,2.4vw,30px)}
-.alt .cell{background:#0a0c26}
+.alt .cell{background:#07091d}
 
 /* Problemas */
 .cells.prob{grid-template-columns:1fr}
@@ -276,7 +276,7 @@ section{padding:var(--section-y) 0;position:relative}
   background:var(--bg-2);border:1px solid rgba(34,211,238,.4);
   box-shadow:0 0 0 5px var(--bg-2);
 }
-.alt .node{background:#0a0c26;box-shadow:0 0 0 5px #0a0c26}
+.alt .node{background:#07091d;box-shadow:0 0 0 5px #07091d}
 @media(min-width:1000px){.node{position:relative;margin-bottom:26px}}
 .stage h3{font-size:20px;letter-spacing:-0.02em;margin-bottom:8px;padding-top:9px}
 @media(min-width:1000px){.stage h3{padding-top:0}}
@@ -308,7 +308,7 @@ section{padding:var(--section-y) 0;position:relative}
 @media(min-width:640px){.cells.ind{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:940px){.cells.ind{grid-template-columns:repeat(4,1fr)}}
 .ind .cell{padding:18px 20px;font-size:15px;color:var(--text-dim);display:flex;align-items:center;gap:12px;transition:color .15s ease, background .15s ease}
-.ind .cell:hover{color:var(--text);background:#12153a}
+.ind .cell:hover{color:var(--text);background:#0e112e}
 .ind .cell::before{content:"";width:6px;height:6px;border-radius:1px;background:var(--cyan);flex-shrink:0;opacity:.8}
 .ind .cell.you{color:var(--cyan)}
 .ind .cell.you::before{background:transparent;border:1px solid var(--cyan)}
@@ -335,7 +335,7 @@ section{padding:var(--section-y) 0;position:relative}
   background:
     radial-gradient(700px 260px at 0% 0%, rgba(34,211,238,.12), transparent 60%),
     radial-gradient(600px 260px at 100% 100%, rgba(168,85,247,.14), transparent 60%),
-    #0b0d2a;
+    #080a1f;
 }
 @media(min-width:900px){.probe{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px}}
 .probe h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:14px}
@@ -416,7 +416,7 @@ section{padding:var(--section-y) 0;position:relative}
 /* Tarjetas separadas y redondeadas */
 .cells{border:0;border-radius:0;overflow:visible;background:none;gap:14px}
 .cell,.alt .cell{
-  background:linear-gradient(180deg, rgba(22,25,58,.86), rgba(12,14,38,.86));
+  background:linear-gradient(180deg, rgba(17,20,46,.86), rgba(9,11,29,.86));
   border:1px solid var(--line);border-radius:16px;
   box-shadow:0 1px 0 rgba(255,255,255,.04) inset;
   transition:border-color .2s ease, box-shadow .2s ease;
@@ -425,7 +425,7 @@ section{padding:var(--section-y) 0;position:relative}
 .cell > .ico{margin-bottom:20px}
 .cells.ind{gap:10px}
 .ind .cell{border-radius:12px}
-.ind .cell:hover{background:linear-gradient(180deg, rgba(30,33,74,.9), rgba(16,18,48,.9))}
+.ind .cell:hover{background:linear-gradient(180deg, rgba(24,27,60,.9), rgba(12,14,38,.9))}
 
 /* Problemas: icono arriba, línea de log al pie */
 .prob .cell{display:flex;flex-direction:column;align-items:flex-start}
@@ -443,7 +443,7 @@ section{padding:var(--section-y) 0;position:relative}
 .node,.alt .node{
   background:linear-gradient(145deg, #0f2230, #1c1436);
   border-color:rgba(168,85,247,.45);color:#e6e9ff;
-  box-shadow:0 0 0 5px #0a0c26, 0 0 26px -4px rgba(168,85,247,.7);
+  box-shadow:0 0 0 5px #07091d, 0 0 26px -4px rgba(168,85,247,.7);
 }
 
 /* Checklist: panel grande con arco de luz */
@@ -457,7 +457,7 @@ section{padding:var(--section-y) 0;position:relative}
   box-shadow:0 0 60px rgba(168,85,247,.28), 0 0 0 70px rgba(168,85,247,.035), 0 0 0 150px rgba(34,211,238,.025);
 }
 .probe > *{position:relative;z-index:1}
-.probe-run{border-radius:14px;border-color:var(--line-strong);background:rgba(7,9,32,.88)}
+.probe-run{border-radius:14px;border-color:var(--line-strong);background:rgba(5,6,22,.88)}
 
 /* Hero: anillos de luz bajo el teléfono */
 .stage-phone{margin-bottom:44px}
@@ -480,7 +480,7 @@ section{padding:var(--section-y) 0;position:relative}
   .float{
     display:block;position:absolute;z-index:2;min-width:150px;
     padding:13px 15px;border-radius:14px;
-    background:linear-gradient(180deg, rgba(26,29,68,.88), rgba(13,15,42,.88));
+    background:linear-gradient(180deg, rgba(20,23,54,.88), rgba(10,12,32,.88));
     border:1px solid rgba(168,85,247,.30);
     backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
     box-shadow:0 20px 50px -20px rgba(0,0,0,.9), 0 0 30px -12px rgba(168,85,247,.6), 0 1px 0 rgba(255,255,255,.07) inset;
